@@ -5,15 +5,16 @@
     this.notes = []
   };
 
+  NoteList.prototype.createNote = function (text) {
+    return this.notes.push(new Note(text));
+  };
+
+  function prepareNotes(notesText) {
+    this.notes.map(function(note){
+      return note.text
+    });
+  };
+
   exports.NoteList = NoteList;
+
 })(this);
-
-NoteList.prototype.createNote = function (text) {
-  return this.notes.push(new Note(text));
-};
-
-NoteList.prototype.displayNotes = function () {
-  this.notes.forEach(function(note){
-    return note.text
-  });
-};
