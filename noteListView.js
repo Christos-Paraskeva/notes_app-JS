@@ -1,14 +1,19 @@
-// "strict mode";
-//
-// (function(exports) {
-//   function NoteListView() {
-//   };
-//
-  function displayNotes(prepareNotes, notesText) {
-    console.log(prepareNotes)
-    return prepareNotes(notesText).join(' ')
+"strict mode";
+
+(function(exports) {
+  function NoteListView(noteList) {
+    this.noteList = noteList
+    console.log(this.noteList.notes())
+
   };
-//
-//   exports.NoteListView = NoteListView;
-//
-// })(this);
+
+  NoteListView.prototype.displayNotes = function () {
+    var x = this.noteList.notes().map(function(note){
+      return note.text
+    });
+    return x.join('\n');
+  };
+
+  exports.NoteListView = NoteListView;
+
+})(this);
