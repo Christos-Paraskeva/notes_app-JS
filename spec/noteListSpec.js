@@ -22,3 +22,14 @@ function noteListCreatesAndSavesNote() {
 };
 
 noteListCreatesAndSavesNote();
+
+function noteListDisplayNotes() {
+  var noteList = new NoteList();
+  var note = noteList.createNote("hello");
+  var note2 = noteList.createNote("just testing");
+  console.log(noteList.displayNotes())
+
+  assert.isTrue(noteList.displayNotes() === "hello" + "\n" + "just testing", "DisplayNotes method does not display current stored notes");
+};
+
+noteListDisplayNotes();
