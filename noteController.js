@@ -12,21 +12,36 @@
 
 "strict mode";
 (function(exports) {
-  function changeGreeting(greeting) {
-    var text = document.getElementById('app');
-    text.innerHTML = greeting;
+  function changeText(html) {
+    var notes = document.getElementById('app');
+    notes.innerHTML = html;
   };
 
-  exports.changeGreeting = changeGreeting;
+  exports.changeText = changeText;
 
 })(this);
 
-changeGreeting('howdy');
+changeText('howdy');
 
 
 (function(exports) {
-  function noteController(noteList) {
+  function NoteController(noteList) {
     this.noteList = noteList
   };
 
+  NoteController.prototype.addNote = function (note) {
+    this.noteList.createNote(note)
+  };
+
+  NoteController.prototype.displayContent = function (html) {  
+    var notes = document.getElementById('app');
+    notes.innerHTML = html;
+  };
+
+  exports.NoteController = NoteController;
+
 })(this);
+
+// var noteList = new NoteList();
+//
+// var noteController = NoteController(noteList);
