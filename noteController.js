@@ -9,39 +9,18 @@
 // })(this);
 //
 // changeName('howdy');
-
-"strict mode";
-(function(exports) {
-  function changeText(html) {
-    var notes = document.getElementById('app');
-    notes.innerHTML = html;
-  };
-
-  exports.changeText = changeText;
-
-})(this);
-
-changeText('howdy');
-
-
-(function(exports) {
-  function NoteController(noteList) {
-    this.noteList = noteList
-  };
-
-  NoteController.prototype.addNote = function (note) {
-    this.noteList.createNote(note)
-  };
-
-  NoteController.prototype.displayContent = function (html) {  
-    var notes = document.getElementById('app');
-    notes.innerHTML = html;
-  };
-
-  exports.NoteController = NoteController;
-
-})(this);
-
-// var noteList = new NoteList();
 //
-// var noteController = NoteController(noteList);
+ "strict mode";
+
+(function(exports) {
+   function NoteController(noteList) {
+     this.noteList = noteList
+   };
+
+   NoteController.prototype.displayContent = function (html) {
+     var notes = document.getElementById('app');
+     notes.innerHTML = html;
+   };
+
+   exports.NoteController = NoteController;
+})(this);
