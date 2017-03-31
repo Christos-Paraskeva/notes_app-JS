@@ -12,7 +12,7 @@
   NoteList.prototype.notes = function () {
     return this._notes;
   };
-  
+
   exports.NoteList = NoteList;
 
 })(this);

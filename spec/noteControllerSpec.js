@@ -7,15 +7,24 @@ function noteControllerCanBeInstantiated () {
 
 noteControllerCanBeInstantiated();
 
+// need to mock the outcome of index html
+// cannot get it to load
 function innerhtmlContainsNotesList () {
-  var noteList = new NoteList();
-  var noteListView = new NoteListView(noteList);
-  var noteController = new NoteController(noteList);
-  noteList.createNote('Something')
-  noteListView.displayNotes = function() {
+  function NoteListDouble() {};
+  function NoteListViewDouble() {};
+
+  var noteListDouble = new NoteListDouble();
+  var noteController = new NoteController(noteListDouble);
+  noteController.view = new NoteListViewDouble(noteListDouble)
+
+  noteController.view.getHTML = function() {
     return "<ul><li><div>Something</div></li></ul>";
   };
-  assert.isTrue(noteController.displayContent() === "<ul><li><div>Something</div></li></ul>", 'Correct Notes are not displayed as HTML');
+
+  console.log(noteController.view.getHTML())
+
+
+  assert.isTrue(noteController.displayContent(element) === element, 'Correct Notes are not displayed as HTML');
 };
 
 innerhtmlContainsNotesList();

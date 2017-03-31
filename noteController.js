@@ -1,25 +1,18 @@
-// (function(exports) {
-//   function changeName(greeting) {
-//     var text = document.getElementById('app').innerHTML
-//     text = greeting
-//   };
-//
-//   exports.changeName = changeName
-//
-// })(this);
-//
-// changeName('howdy');
-//
- "strict mode";
+"strict mode";
 
 (function(exports) {
    function NoteController(noteList) {
      this.noteList = noteList
+     this.view = new NoteListView(noteList);
    };
 
-   NoteController.prototype.displayContent = function (html) {
-     var notes = document.getElementById('app');
-     notes.innerHTML = html;
+   NoteController.prototype.addNote = function (text){
+     this.noteList.createNote(text);
+   };
+
+   NoteController.prototype.displayContent = function(element = document.getElementById('app')) {
+     var element = element;
+     element.innerHTML = this.view.getHTML();
    };
 
    exports.NoteController = NoteController;
