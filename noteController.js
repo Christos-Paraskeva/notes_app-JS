@@ -1,9 +1,9 @@
 "strict mode";
 
 (function(exports) {
-   function NoteController(noteList) {
+   function NoteController(noteList, view = new NoteListView(noteList)) {
      this.noteList = noteList
-     this.view = new NoteListView(noteList);
+     this.view = view
    };
 
    NoteController.prototype.addNote = function (text){
@@ -12,7 +12,7 @@
 
    NoteController.prototype.displayContent = function(element = document.getElementById('app')) {
      var element = element;
-     element.innerHTML = this.view.getHTML();
+     return element.innerHTML = this.view.getHTML();
    };
 
    exports.NoteController = NoteController;
