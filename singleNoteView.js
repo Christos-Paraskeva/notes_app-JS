@@ -6,7 +6,8 @@
   };
 
   SingleNoteView.prototype.getSingleHtml = function (which) {
-    notes = this.noteList.notes().map(function(note){
+    console.log(this.noteList._notes)
+    notes = this.noteList._notes().map(function(note){
       return note.text
     });
     return element = ("<ul><li><div>" + notes[which] + "</div></li><li><div>")
