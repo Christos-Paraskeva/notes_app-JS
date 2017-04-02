@@ -1,16 +1,15 @@
 "strict mode";
 
 (function(exports) {
-  function SingleNoteView(noteList) {
+  function SingleNoteView(noteList = new NoteList()) {
     this.noteList = noteList
   };
 
   SingleNoteView.prototype.getSingleHtml = function (which) {
-    console.log(this.noteList._notes)
     notes = this.noteList.notes().map(function(note){
       return note.text
     });
-    return element = ("<ul><li><div>" + notes[which] + "</div></li><li><div>")
+    return element = ("<ul><li><div>" + notes[which] + "</div></li></ul>")
   };
 
   exports.SingleNoteView = SingleNoteView;
