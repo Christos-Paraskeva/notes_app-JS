@@ -36,7 +36,6 @@ function innerHtmlContainsNotesList () {
   var getElementById = new InnerHtmlDouble();
   var noteListDouble = new NoteListDouble();
   var noteController = new NoteController(noteListDouble, view = new ViewDouble(noteListDouble));
-
   assert.isTrue(noteController.displayContent(InnerHtmlDouble) === "<ul><li><div>Something</div></li></ul>", 'Correct Notes are not displayed as HTML');
 };
 

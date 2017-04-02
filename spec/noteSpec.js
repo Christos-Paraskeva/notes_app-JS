@@ -2,16 +2,15 @@
 
 function noteRespondsToText () {
   var note = new Note("hello");
-  assert.isTrue(note.hasOwnProperty("text"), "'Text' is not a valid property");
+  assert.isTrue(note.hasOwnProperty("text"), "'Text' is not a property of note");
 };
-
-
 noteRespondsToText();
 
-function noteSavesText () {
-  var text = "hello"
-  var note = new Note(text);
-  assert.isTrue(note.text === text, "Text has not been saved");
+function noteHasUniqueId () {
+  var text = 'note 1'
+  var id = 0
+  var note = new Note(id, text)
+  assert.isTrue(note.hasOwnProperty("id"), "Note does not contain Id");
 };
 
-noteSavesText();
+noteHasUniqueId();

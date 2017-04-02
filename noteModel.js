@@ -1,7 +1,8 @@
 "strict mode";
 
 (function(exports) {
-  function Note(text) {
+  function Note(id, text) {
+    this.id = id
     this.text = text
   };
 

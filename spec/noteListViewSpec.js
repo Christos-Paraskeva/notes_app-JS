@@ -17,7 +17,6 @@ NoteListDouble.prototype = {
 function noteListDisplayFirst20CharactersNotes() {
   var noteListDouble = new NoteListDouble();
   var noteListView = new NoteListView(noteListDouble);
-  console.log(noteListView.getHTML())
   assert.isTrue(noteListView.getHTML() === "<ul><li><div>" + "this note has more t" + "</div></li><li><div>" + "this is a new note t" + "</div></li></ul>", "Does not display only first 20 characters of note");
 };
 
