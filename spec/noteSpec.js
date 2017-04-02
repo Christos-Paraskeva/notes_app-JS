@@ -4,6 +4,7 @@ function noteRespondsToText () {
   var note = new Note("hello");
   assert.isTrue(note.hasOwnProperty("text"), "'Text' is not a property of note");
 };
+
 noteRespondsToText();
 
 function noteHasUniqueId () {

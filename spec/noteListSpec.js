@@ -2,7 +2,6 @@
 
 function noteListRespondsToNotes () {
   var noteList = new NoteList();
-
   assert.isTrue(noteList.hasOwnProperty("_notes"), "'Notes' is not a valid property");
 };
 
@@ -22,3 +21,14 @@ function noteListCreatesAndSavesNote() {
 };
 
 noteListCreatesAndSavesNote();
+
+function noteListSavesUniqueNoteId() {
+  var noteList = new NoteList();
+  noteList.createNote('note 1')
+  noteList.createNote('note 2')
+  assert.isTrue(noteList._notes[0].hasOwnProperty("id"), "Id is not saved");
+  assert.isTrue(noteList._notes[0].id === 0, "Unique Id's are not saved");
+  assert.isTrue(noteList._notes[1].id === 1, "Unique Id's are not saved");
+};
+
+noteListSavesUniqueNoteId();
