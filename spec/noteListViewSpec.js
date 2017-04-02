@@ -1,15 +1,5 @@
 "strict mode";
 
-// function noteListDisplayNotes() {
-//   var noteList = new NoteList();
-//   noteList.createNote("hello");
-//   noteList.createNote("just testing");
-//   var noteListView = new NoteListView(noteList);
-//   assert.isTrue(noteListView.getHTML() === "<ul><li><div>" + "hello" + "</div></li><li><div>" + "just testing" + "</div></li></ul>", "DisplayNotes method does not display current stored notes");
-// };
-//
-// noteListDisplayNotes();
-
 function NoteDouble(text) {
   this.text = text
 };
@@ -32,15 +22,6 @@ function noteListDisplayFirst20CharactersNotes() {
 };
 
 noteListDisplayFirst20CharactersNotes();
-
-// function noteListDisplayOneNote() {
-//   var noteListDouble = new NoteList();
-//   noteList.createNote("hello");
-//   var noteListView = new NoteListView(noteList);
-//   assert.isTrue(noteListView.getHTML() === "<ul><li><div>" + "hello" + "</div></li></ul>", "DisplayNotes method does not display a single note");
-// };
-
-// noteListDisplayOneNote();
 
 function noteListDisplayNoNotes() {
   var noteList = new NoteList();
