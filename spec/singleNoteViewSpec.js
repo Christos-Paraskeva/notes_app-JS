@@ -25,7 +25,7 @@ NoteListDouble.prototype = {
 function viewSingleNote () {
   var noteListDouble = new NoteListDouble();
   singleNoteView = new SingleNoteView(noteListDouble);
-  assert.isTrue(singleNoteView.getSingleHtml(1) === "<ul><li><div>note 2</div></li><li><div>", "Does not display a single note");
+  assert.isTrue(singleNoteView.getSingleHtml(1) === "<ul><li><div>note 2</div></li></ul>", "Does not display a single note");
 };
 
 viewSingleNote();
